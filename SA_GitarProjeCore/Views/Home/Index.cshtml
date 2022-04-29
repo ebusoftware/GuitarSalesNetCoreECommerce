@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SA_GitarProjeCore.Models.Products>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_User.cshtml";
+}
+
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Guitar Sale</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!--Ürünleri listeletme başla-->
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    @item.Categories.CategoryName
+                </div>
+                <img src="~/Images/@Html.DisplayFor(modelItem => item.ImageName)" width="340" height="300" style="border:1px;margin-top:20px" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.ProductName</h5>
+                    <p class="card-text">@item.Comment</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Wires Number:@Html.DisplayFor(modelItem => item.Wires.WiresNumber)</li>
+                    <li class="list-group-item">Brand: @Html.DisplayFor(modelItem => item.Brands.BrandName)</li>
+                    <li class="list-group-item">Color: @Html.DisplayFor(modelItem => item.Colors.ColorName)</li>
+                </ul>
+                <div class="card-body">
+                    <a asp-action="AddCart" asp-route-id="@item.ProductId" class="btn btn-success"><i class="bi bi-cart"></i>Add cart</a>
+                </div>
+            </div>
+        </div>
+            }
+        </div>
+    </div>
+    <!--Ürünleri listeletme bitir-->
+
+</body>
+
+</html>
+<script src="js/jquery-1.12.1.min.js"></script>
+<!-- popper js -->
+<script src="js/popper.min.js"></script>
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>

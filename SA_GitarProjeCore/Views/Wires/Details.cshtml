@@ -1,0 +1,22 @@
+﻿@model SA_GitarProjeCore.Models.Wires
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="container">
+    <h4>Wires</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WiresNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WiresNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

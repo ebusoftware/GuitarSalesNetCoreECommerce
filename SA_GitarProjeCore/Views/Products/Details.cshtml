@@ -1,0 +1,80 @@
+﻿@model SA_GitarProjeCore.Models.Products
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h4>Products</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BarcodeNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BarcodeNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StockQuantity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StockQuantity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Categories)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Categories.CategoryName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Brands)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Brands.BrandName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Bodys)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bodys.BodyType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Wires)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Wires.WiresNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Colors)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Colors.ColorName)
+        </dd>
+    </dl>
+</div>
+    <a asp-action="Index">Back to List</a>
+</div>

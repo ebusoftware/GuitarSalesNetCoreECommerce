@@ -1,0 +1,84 @@
+﻿@model SA_GitarProjeCore.Models.Products
+
+@{
+    ViewData["Title"] = "Create";
+}
+<hr />
+<div class="container">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.categories"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrandId" class="control-label"></label>
+                <select asp-for="BrandId" class="form-control" asp-items="ViewBag.brands"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyId" class="control-label"></label>
+                <select asp-for="BodyId" class="form-control" asp-items="ViewBag.bodies"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="WireId" class="control-label"></label>
+                <select asp-for="WireId" class="form-control" asp-items="ViewBag.wires"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ColorId" class="control-label"></label>
+                <select asp-for="ColorId" class="form-control" asp-items="ViewBag.colors"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarcodeNumber" class="control-label"></label>
+                <input asp-for="BarcodeNumber" class="form-control" />
+                <span asp-validation-for="BarcodeNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockQuantity" class="control-label"></label>
+                <input asp-for="StockQuantity" class="form-control" />
+                <span asp-validation-for="StockQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment" class="control-label"></label>
+                <input asp-for="Comment" class="form-control" />
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <div class="custom-file">
+                    <input type="file" asp-for="ImageFile" class="custom-file-input" id="customFile"
+                           onchange="document.getElementById('PreviewPhoto').src = window.URL.createObjectURL(this.files[0])">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group col-4">
+
+                <img id="PreviewPhoto" src="~/images/noimage.png" alt="Logo Image" width="125" height="125" style="border:1px;margin-top:20px" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

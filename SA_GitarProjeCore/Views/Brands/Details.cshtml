@@ -1,0 +1,21 @@
+﻿@model SA_GitarProjeCore.Models.Brands
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h4>Brands</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BrandName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BrandName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
